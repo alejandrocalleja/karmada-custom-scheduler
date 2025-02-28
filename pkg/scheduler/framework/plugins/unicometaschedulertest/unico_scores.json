@@ -1,0 +1,17 @@
+{
+    "cluster1": {
+        "green-power": 100,
+        "low-power": 20,
+        "high-performance": 80
+    },
+    "cluster2": {
+        "green-power": 85,
+        "low-power": 20,
+        "high-performance": 80
+    },
+    "cluster3": {
+        "green-power": 0,
+        "low-power": 20,
+        "high-performance": 80
+    }
+}
