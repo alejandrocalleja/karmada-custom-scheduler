@@ -24,11 +24,12 @@ import (
 	controllerruntime "sigs.k8s.io/controller-runtime"
 
 	"github.com/karmada-io/karmada/cmd/scheduler/app"
+	"github.com/alejandrocalleja/karmada-custom-scheduler/pkg/scheduler/framework/plugins/unicometaschedulertest"
 )
 
 func main() {
 	stopChan := controllerruntime.SetupSignalHandler().Done()
-	command := app.NewSchedulerCommand(stopChan)
+	command := app.NewSchedulerCommand(stopChan, app.WithPlugin(unicometaschedulertest.Name, unicometaschedulertest.New))
 	code := cli.Run(command)
 	os.Exit(code)
 }
